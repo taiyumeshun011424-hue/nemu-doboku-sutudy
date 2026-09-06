@@ -1,0 +1,23 @@
+{
+  "name": "2級土木施工管理士補 学習データベース",
+  "short_name": "土木2級DB",
+  "description": "2級土木施工管理士補 第一次検定のオフライン学習データベース",
+  "lang": "ja",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f4f6f5",
+  "theme_color": "#245c4f",
+  "icons": [
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

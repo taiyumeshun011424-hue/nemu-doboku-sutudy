@@ -1,0 +1,103 @@
+
+:root {
+  color-scheme: light;
+  --bg: #f4f6f5;
+  --card: #ffffff;
+  --text: #17221f;
+  --muted: #66736f;
+  --border: #dbe3e0;
+  --accent: #245c4f;
+  --accent-soft: #e4f1ed;
+  --warn-bg: #fff6df;
+  --warn-border: #efd493;
+  --rank-a: #9d2e2e;
+  --rank-b: #815b12;
+  --rank-c: #48615a;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Yu Gothic UI", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.55;
+}
+button, input, select { font: inherit; }
+button { touch-action: manipulation; }
+.topbar {
+  background: var(--card);
+  border-bottom: 1px solid var(--border);
+  padding: max(14px, env(safe-area-inset-top)) 16px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+.eyebrow { margin: 0 0 2px; color: var(--muted); font-size: 12px; font-weight: 700; }
+h1 { margin: 0; font-size: 20px; line-height: 1.25; }
+.ghost-btn { border: 1px solid var(--border); background: #fff; border-radius: 10px; min-height: 44px; padding: 0 12px; color: var(--accent); font-weight: 700; }
+main { width: min(760px, 100%); margin: 0 auto; padding: 12px 12px 40px; }
+.search-panel { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 12px; }
+.search-box { display: flex; align-items: center; gap: 8px; min-height: 52px; border: 2px solid var(--border); border-radius: 14px; padding: 0 8px 0 12px; background: #fff; }
+.search-box:focus-within { border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-soft); }
+.search-box input { min-width: 0; flex: 1; border: 0; outline: 0; font-size: 16px; background: transparent; }
+.clear-btn { min-width: 40px; min-height: 40px; border: 0; border-radius: 999px; background: transparent; font-size: 22px; color: var(--muted); }
+.filter-group { margin-top: 12px; }
+.filter-label, .select-label { display: block; margin: 0 0 7px; color: var(--muted); font-size: 12px; font-weight: 800; }
+.chips { display: flex; flex-wrap: wrap; gap: 7px; }
+.chip { border: 1px solid var(--border); background: #fff; min-height: 40px; padding: 7px 11px; border-radius: 999px; font-size: 13px; font-weight: 700; }
+.chip.active { border-color: var(--accent); background: var(--accent-soft); color: var(--accent); }
+.filter-row { display: flex; gap: 12px; align-items: end; }
+.grow { flex: 1; min-width: 0; }
+.select-label { min-width: 108px; margin-top: 12px; }
+select { display: block; width: 100%; min-height: 42px; margin-top: 7px; border: 1px solid var(--border); border-radius: 10px; background: #fff; padding: 0 8px; font-size: 16px; color: var(--text); }
+.summary-bar { display: flex; gap: 10px; align-items: baseline; padding: 12px 4px 8px; color: var(--muted); font-size: 13px; }
+.summary-bar strong { color: var(--text); font-size: 16px; }
+.results { display: grid; gap: 10px; }
+.study-card { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 14px; overflow: hidden; }
+.card-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 8px; }
+.badges { display: flex; flex-wrap: wrap; gap: 6px; }
+.badge { display: inline-flex; align-items: center; min-height: 28px; padding: 3px 8px; border-radius: 999px; background: #eef2f1; font-size: 12px; font-weight: 800; }
+.badge.rank-A { color: var(--rank-a); background: #f7e8e8; }
+.badge.rank-B { color: var(--rank-b); background: #f8efd8; }
+.badge.rank-C { color: var(--rank-c); background: #e9efed; }
+.status-button { border: 1px solid var(--border); background: #fff; border-radius: 999px; min-height: 34px; padding: 4px 10px; font-size: 12px; font-weight: 800; white-space: nowrap; }
+.status-button[data-status="復習"] { background: #fff5d8; border-color: #ead18d; }
+.status-button[data-status="習得"] { background: var(--accent-soft); border-color: #bcd7cf; color: var(--accent); }
+.category { margin: 10px 0 3px; color: var(--muted); font-size: 12px; font-weight: 700; }
+.title { margin: 0; font-size: 20px; line-height: 1.35; }
+.summary { margin: 8px 0 10px; }
+.key-box { background: #f1f5f4; border-radius: 12px; padding: 10px 11px; }
+.key-label { display: block; color: var(--muted); font-size: 11px; font-weight: 800; margin-bottom: 3px; }
+.key-info { display: block; font-size: 15px; white-space: pre-wrap; }
+.trap-box { margin-top: 9px; padding: 10px 11px; border: 1px solid var(--warn-border); background: var(--warn-bg); border-radius: 12px; }
+.trap-box > span { font-size: 12px; font-weight: 900; }
+.trap { margin: 3px 0 0; font-weight: 700; }
+details { margin-top: 10px; border-top: 1px solid var(--border); padding-top: 8px; }
+summary { min-height: 42px; display: flex; align-items: center; cursor: pointer; color: var(--accent); font-weight: 800; }
+.details-body { padding: 3px 0 8px; display: grid; gap: 8px; }
+.detail-row { border-left: 3px solid var(--border); padding-left: 9px; }
+.detail-row dt { color: var(--muted); font-size: 11px; font-weight: 800; }
+.detail-row dd { margin: 2px 0 0; white-space: pre-wrap; }
+.learn-actions { display: grid; grid-template-columns: repeat(3, 1fr); gap: 7px; margin-top: 9px; }
+.learn-actions button { min-height: 44px; border: 1px solid var(--border); border-radius: 11px; background: #fff; font-weight: 800; font-size: 13px; }
+.learn-actions button.selected[data-status="復習"] { background: #fff5d8; border-color: #d9b85e; }
+.learn-actions button.selected[data-status="習得"] { background: var(--accent-soft); border-color: var(--accent); color: var(--accent); }
+.learn-actions button.selected[data-status="未学習"] { background: #eef2f1; border-color: #8fa19b; }
+.more-btn { width: 100%; min-height: 48px; margin-top: 12px; border: 1px solid var(--border); border-radius: 12px; background: #fff; color: var(--accent); font-weight: 900; }
+.empty { background: #fff; border: 1px dashed var(--border); border-radius: 16px; padding: 26px 16px; text-align: center; color: var(--muted); }
+mark { background: #ffefa6; color: inherit; padding: 0 1px; border-radius: 2px; }
+@media (min-width: 680px) {
+  main { padding-top: 18px; }
+  .results { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .study-card { display: flex; flex-direction: column; }
+  details { margin-top: auto; }
+}
+@media (max-width: 420px) {
+  .filter-row { display: block; }
+  .select-label { width: 100%; }
+  .chip { font-size: 12px; padding-inline: 9px; }
+}
